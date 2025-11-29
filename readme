@@ -1,0 +1,8 @@
+-Open up a terminal and run the following commands
+1.pip install flask 
+2.pip install psycopg2-binary
+
+// pip is a package installer
+
+-To confirm installation
+->pip show package_name e.g pip show flask
