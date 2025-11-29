@@ -1,24 +1,30 @@
-from optparse import Values
 import psycopg2
 
-conn = psycopg2.connect(host='localhost',port='5432',user='postgres',password='1234',dbname='myduka_db')
+conn = psycopg2.connect(
+    host = 'localhost',
+    port = '5432',
+    user = 'postgres',
+    password = '1234',
+    dbname = 'myduka_db'
+)
+
 
 cur = conn.cursor()
 
-
-
 def products():
-    cur.execute("select * from products")
-    products = cur.fetchall()
-    return products
+    cur.execute("SELECT * FROM products")
+    return cur.fetchall()
 
-
-
-def insert_products():
-    cur.execute(f"insert into products(name, buying_price, selling_price) values{Values}")
+def insert_products(name,buying_price,selling_price):
+    cur.execute(
+        "INSERT INTO products(name,buying_price,selling_price) VALUES(%s,%s,%s)",
+        (name,buying_price,selling_price)
+    )
     conn.commit()
+    return "Producta added successfully"
 
-values = ('Goat',60000,7000)
-products = insert_products
+# insert product
+result = insert_products("Goat",60000,70000) 
 
-print(products)
+# fetch all products
+print(products())

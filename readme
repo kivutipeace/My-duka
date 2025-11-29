@@ -6,3 +6,84 @@
 
 -To confirm installation
 ->pip show package_name e.g pip show flask
+
+
+PREQUISITIES
+- SQL -> sql queries (crud),pk & fk, joins, where 
+- Python -> data types, type conversion, data structures(lists&tuples),loops, if,functions 
+
+Internet - a global network of connected devices or computers WWW - a service running on the internet that connects to the internet via the browser
+Server - a computer device used for receiving / sending data from a client 
+Hosting - Uploading application files to a server to make the application available or visible online
+
+
+
+1.Build your applivation 
+2.Send your files to a server
+3.IP address is assigned to your application
+
+
+
+IP address -> a number used to uniquely identify a device on a network e.g. 170.100.82.70
+
+Domain name -> a user friendly name attached to an IP address to enable users acces applications eg www.google.com, www.netflix.com
+
+
+DNS - Domain Name System -> The internet's phonebook used to translate domain names into IP addresse
+
+
+127.0.0.1 -> The Ip address of your device / computer locahost -> domain name for 127.0.01
+
+
+
+User application / Hardware <---------> Drivers <-----------> OS(kernel)(Keyboard driver)(Bluetooth driver)
+
+
+Python code <---------> DB-API Interface <----------> Drivers(Psycopg2) <---------> DN (Postgres)
+
+Psycopg2 
+->A PostgresQL adapter used to connect Python to a Postgrs database--a driver -- connects Python code to Postgres
+
+
+**host** - where is the db located ->on what server ->localhost(my own computer/device)
+**port** - where exactly on my device is the postgres service running
+
+ 5432- default port for postgres
+**user & password** - username and password used for authenticating a postgres login
+**dbname** - database you want to connect to
+
+
+**cur -> on object used to manipulate the database / perform db operation cur.execute() -> a function used to execute the actual sql queries 
+
+C - Create - Insert
+R - Read -  Select
+U - Update - Update
+D - Delete - Delets
+
+cur.fetchall() -> fetches data from the query and gives it to python -> list of tuples
+
+
+conn.commit() - updates the database with the new state
+
+12 -> Products -> initial state -> add 5 products 17 ----> new state -- enabled by commit()
+
+Task 1. Brush up on the following -> 
+1.SQL querries
+2.Joins
+3.Python functions
+4.Data Types
+5.Type conversion
+6.Loops
+7.if statements
+8.lists
+9.Tuples
+
+
+2.Research on other metthod appart from f-string to add products dynamivally ------> hint use => %s
+
+3.Create Two functions to do the following ->
+
+a.Insert 2 sales using psycopg2
+b.insert_sales()
+c.View my sales data using psycopg2
+d.get_sales()
