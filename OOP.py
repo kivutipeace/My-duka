@@ -17,7 +17,7 @@ class BankAccount:
         self.balance+= amount
         
     def display_info(self):
-        return f"====Welcome {self.owner_name} account number {self.account_number}, balance is {self.balance}, account created at {self.date_opened}==="
+        return f"==== Welcome {self.owner_name} account number {self.account_number}, balance is {self.balance}, account created at {self.date_opened} ==="
     
         
 # Object creation and method calling
