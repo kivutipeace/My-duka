@@ -113,8 +113,8 @@ OOP - A programming paradigm that builds programs around classes and objects
 -> Behaviour answers the question: what can a class do? e.g Person -walk,talk,eat,sleep,work class Car - start,move,stop class laptop -start,power off,code,send mail
 
 
-**Methods** -Functions inside Constructor 
-->Constructor - a special method used to intialize objects -> it is automatically called when an object is created -> Python's constructir is **init**--- def __init__(sel,parameters)
+**Methods** -Functions inside class
+->Constructor - a special method used to intialize objects -> it is automatically called when an object is created -> Python's constructir is **init**--- def __init__(self,parameters)
 -Self - refers the object itself parameters
 - Parameters - attributes of the class
 
