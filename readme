@@ -87,3 +87,52 @@ a.Insert 2 sales using psycopg2
 b.insert_sales()
 c.View my sales data using psycopg2
 d.get_sales()
+
+
+
+
+                   OBJECT ORIENTED PROGRAMMING
+--> We have the following broad categories of classifying data types:
+1. Inbuilt data types -
+- Data types come with the programming language e.g Python --> int,float,str,bool,list,tuple,set,dict
+
+2. User defined data types - are data types created by the programmer - enabled by the use of classes and objects e.g Person, Student, Car
+
+
+OOP - A programming paradigm that builds programs around classes and objects 
+
+**Classes** --> A blueprint or a template for creating object --> An instance of a class
+
+-->A class has the following 2 things 
+1. Attributes -> Variables holding data in a class
+    ->Answers the queston: what does a class have? e,g Person - name, age,height,weight,martial_status,address etc class Car -engine,yom,make,model,colour etc class Laptop -width,ram processors
+
+
+2. **Behaviour** -> Defined by methods 
+ -> Methods are simply functions inside classes
+-> Behaviour answers the question: what can a class do? e.g Person -walk,talk,eat,sleep,work class Car - start,move,stop class laptop -start,power off,code,send mail
+
+
+**Methods** -Functions inside Constructor 
+->Constructor - a special method used to intialize objects -> it is automatically called when an object is created -> Python's constructir is **init**--- def __init__(sel,parameters)
+-Self - refers the object itself parameters
+- Parameters - attributes of the class
+
+
+OPP Task 1.
+1.Create a class BankAccount with the following attributes:
+1.Account numbeer
+2.Balance
+3.Owner name
+4.Date opened
+
+2.Give the above BankAccount class the following behaviour or methods
+1.Deposit()
+2.Withdraw()
+3.dispay_info()
+
+3.Create a BankAccount objects that can deposit,withdraw and display_info
+
+
+
+
