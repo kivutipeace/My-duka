@@ -1,6 +1,6 @@
 class BankAccount:
     # Constructor - initializes objects
-    def __init__(self,account_number,balance,owner_name,date_opened):
+    def __init__(self,account_number,balance,owner_name,date_opened,):
         self.account_number = account_number
         self.balance = balance
         self.owner_name = owner_name
@@ -27,6 +27,7 @@ class BankAccount:
         
 # Object creation and method calling
 # Creating the first bank account - object
+userinput = input('Enter owner name')
 Account1 = BankAccount(1234,100000.00,"Peace","12-10-2004")
 # Creating the second bank account - object
 Account2 = BankAccount(2345,200000.00,"Letting","13-10-2003")
@@ -39,6 +40,7 @@ Account2.withdraw(500)
 # Printing the banks info
 print(Account1.display_info())
 print(Account2.display_info())
+
 
 # OOP tasks 2
 class Car: # Class
@@ -138,3 +140,16 @@ teacher = Teacher("Letting",25,"Computer Science",200000)
 # Printing the persons info
 print(student.display_info())
 print(teacher.display_info())
+
+
+
+
+userInput = input("Enter your name: ")
+if userInput == "Ken":
+    print('Failure')
+elif userInput == "Faridah":
+    print('Failure')
+elif userInput == "Peace":
+    print(Account1.display_info())
+else:
+    print('NaN')
