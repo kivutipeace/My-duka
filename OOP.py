@@ -7,37 +7,28 @@ class BankAccount:
         self.date_opened = date_opened
         
         # self - refrences the object
-        # Behaviour - withdraw money
     def withdraw(self,amount):
-        # Checking if the amount to be withdrawed is accurate with the balance
         if amount <= self.balance:
             self.balance -= amount
-        else: # else your withdraw request isn't valid coz you dont have the required amount 
+        else:  
             return "Insufficient funds"
         
-        # Behaviour - deposit money
     def deposit(self,amount):
-        # From the balance and the amount to be deposited
         self.balance+= amount
         
-        # Display banks info
+
     def display_info(self):
         return f"==== Welcome {self.owner_name} account number {self.account_number}, balance is {self.balance}, account created at {self.date_opened} ==="
     
         
 # Object creation and method calling
-# Creating the first bank account - object
 userinput = input('Enter owner name')
 Account1 = BankAccount(1234,100000.00,"Peace","12-10-2004")
-# Creating the second bank account - object
 Account2 = BankAccount(2345,200000.00,"Letting","13-10-2003")
-# Bank acc 1 method calling
 Account1.deposit(1000)
 Account1.withdraw(500)
-# Bank acc 2 method calling
 Account2.deposit(1000)
 Account2.withdraw(500)
-# Printing the banks info
 print(Account1.display_info())
 print(Account2.display_info())
 
@@ -55,13 +46,11 @@ class Car: # Class
         
         # Behaviour
         # self - references the object
-        # Behaviour to start the car
     def start(self):
-        # Check if the car has a brand and a model - is it a car?
-        if self.brand == self.brand and self.model == self.model:
-            return 'You have a car you can start it'
-        else: # else its not a car and it can't start
-            return 'You do not have a car, you cant start it' 
+        if self.fuel_level >= 100 and self.is_running == True:
+            return 'You can start it'
+        else:
+            return 'Your car cant start' 
     
     # Behaviour to stop the car if running
     def stop(self):
