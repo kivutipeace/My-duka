@@ -146,10 +146,10 @@ print(teacher.display_info())
 
 userInput = input("Enter your name: ")
 if userInput == "Ken":
-    print('Failure')
+    print('Not allowed')
 elif userInput == "Faridah":
-    print('Failure')
+    print('Note allowed')
 elif userInput == "Peace":
     print(Account1.display_info())
 else:
-    print('NaN')
+    print('Not allowed')
