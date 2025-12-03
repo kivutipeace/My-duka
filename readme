@@ -133,6 +133,48 @@ OPP Task 1.
 
 3.Create a BankAccount objects that can deposit,withdraw and display_info
 
+      **Inheritance**
+->This is the concept whereby one class (child) acquires / inherits / borrow properties from another class (parent)-> it allows reuse to code instead of rewritting everything everything from scratch
+
+->Parent class -> The class from which propersties are inherited -> also refered to as Base class / Super class
+
+->Child class -> The class inheriting properties from another class -> Also referred to as Derived class /Sub class
+
+Why use Inheritance>
+1.Avoids duplicated code
+2.Adds new feature to an existing class
+3.Allows behaviour modification - method overriding
+
+Types of inheritance:
+1.Single inheritance - a child class inherits from a single parent class
+2.Multiple inheritance - a child inherits from more than one class
+3.Multilevel inheritance - a child class inherits from a parent and the parent also from another class
+4.Hierrachial inheritance - multiple child classes from a single parent class
+
+Method Overriding -> This is where a child class provides its own implementation of a method that already exeists in the parent class->The child's ,Method replaces the parent method when by a child object -> This is part of the POLYMORPHISIM concept
 
 
+OOP TASK 
+1.Create a Car Class
+Have the following attributes
+- brand - model - year -fuel_capcity - fuel_level -is_running(boolen value)
+Have the methods
+- start()
+- stop()
+- refuel()
+- drive()
+- display_car_info()
 
+
+2.Create a School system program using Python classes to demnstraate inheritance
+-Create a parent class called Person with:
+    attributes - name , age 
+    method : displaay_info()
+
+-> Create child classes that inherit the parent class:
+       a)Student with:
+             -additional attributes - student_id, course
+             -override display_info() to include student_id and course
+       b)Teacher with:
+              -additional attributes - subject, salary
+              -override display_info() to include subject and salary
