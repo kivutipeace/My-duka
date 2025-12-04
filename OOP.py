@@ -109,7 +109,7 @@ class Teacher(Person): # Child class
         self.salary = salary
         
     def display_info(self):
-        super.display_info()
+        super().display_info()
         print(f"=== Teachers subject {self.subject} \n and teachers salary {self.salary} ===")
     
 # Object construction 
@@ -117,4 +117,4 @@ student = Student("Peace",15,90,"Computer Science")
 teacher = Teacher("Letting",25,"Computer Science",200000)
 # Printing the persons info
 student.display_info()
-teacher.dispaly_info()
+teacher.display_info()

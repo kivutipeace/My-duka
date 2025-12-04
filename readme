@@ -180,4 +180,24 @@ Have the methods
               -override display_info() to include subject and salary
 
 
-**Super** - 
+**Super()** -a keyword used by a child class to acces methods and attributes from parent class
+
+**str**- a special method used to display objects in a user friendly string from when a user tries to print object directly -> It is part of a broader class of methods called dunder(double underscore)methods which contain leading and trailing underscores to make the appear like in-built methods
+
+
+Inheritance Polymorphism  -- methods overriding + method overloading Abstraction Encapsultation
+
+
+**FLASK** - Flask is a python framwork used to build web applications
+
+**Framework** -A prebuilt  structure of code and tools used to help developers build applications by not having to vreate them from scratch-- they easen development but have strict guildelines on usage
+
+
+Examples of frameworks:
+ Python --> Flask,FastAPI,Django
+ Javascript --> React, Angular, Vue, Svetle 
+ Java --> Spring 
+ C# -> .NET
+ Ruby -> Ruby on rails
+ GO -> Gin
+ NodeJS -> Express

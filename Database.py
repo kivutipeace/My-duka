@@ -26,14 +26,12 @@ def insert_products(values):
 # ------------------------
 def get_products():
     cur.execute("SELECT * From products")
-    products = cur.fetchall
+    products = cur.fetchall()
     return products
 
 #----------------------------
 # Getting the values
 # ---------------------------
-product_1 = ("Iphone 17",200000,300000)
-insert_products(product_1)
 products = get_products()
 print(products)
     
@@ -58,11 +56,7 @@ def get_sales():
 # ------------------------
 # Getting the values
 #--------------------------
-sale_1 = (2,2000)
-insert_sales(sale_1)
-sales = get_sales()
-print(sales)
-    
+
  
 
 
