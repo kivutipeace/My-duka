@@ -201,3 +201,73 @@ Examples of frameworks:
  Ruby -> Ruby on rails
  GO -> Gin
  NodeJS -> Express
+
+
+
+     **Flask**
+1.Routing --> A mechanism that maps / connects URLs to Python functions.
+It is a system for resource navigation --> Connects a URL to functions in your flask app
+
+
+URL - the full address that is used to access a web application
+e.g https://meet.google.com/dsh-idtb-oqb
+
+Parts of a URL
+1. Protocol -? tells the browser how to communication --> http (sends data as raw text) && https (encryption of data)
+2. Domain name - name of the website
+3. Port (optiona) - where exactly on a server is the app running 
+4. Path - the path to access a specific resource
+
+
+**Routing in Flask** --> To execute routing mechanism in Flask we use a decorator function called @app.route() 
+**Decorator function** -> A function that modifies or determines the behaviour of another function @app.route() can take some parameters
+
+a) Rule / Path - the path to access a specific resource 
+b) Method 
+
+View function - Function responsible for returning resources to the client 
+
+@app.route('/') ---> decorator function 
+def home (): --> View function return
+"This is the index route" --. reource / data to be accessed
+
+@app.route('/')
+def home():
+    "This is index route"
+
+
+Index route - the default landing route when an application is opened / accessed --- '/'
+
+N/B:- Every view function must have its own unique name
+
+Task
+1.import get_sales() to main and display sales in your browser
+
+2. Adjust your project structure to have the structure below:
+
+
+My_duka
+|
+|
+database.py
+|
+|
+main.py
+|
+|
+static (folder)
+|
+|
+templates 
+    |
+    index.html
+    |
+    products.html
+    |
+    sales.html
+    |
+    dashboard.html
+    |
+    login.html
+    |
+    register.html
