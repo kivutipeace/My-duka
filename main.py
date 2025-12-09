@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from Database import get_products, get_sales, insert_products
+from Database import get_products, get_sales, insert_products, insert_sales
 
 # Flask instance
 app = Flask(__name__)
@@ -30,6 +30,13 @@ def fetch_sales():
         sales = get_sales()
         return render_template("sales.html",sales = sales)
     
+@app.route('/add_sales',methods=['GET','POST'])
+def sales():
+        product_id = request.form['product_id']
+        quantity = request.form['quantity']
+        new_sale = (product_id,quantity)
+        insert_sales(new_sale)
+        return redirect(url_for('fetch_sales'))
 
 # dashboard route
 @app.route('/dashboard')

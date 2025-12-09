@@ -1,8 +1,1 @@
-.sales-contents{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(5,1fr);
-}
-.select-sales{
-    grid-row: span 5 / 5;
-}
+
