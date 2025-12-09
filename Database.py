@@ -29,11 +29,6 @@ def get_products():
     products = cur.fetchall()
     return products
 
-#----------------------------
-# Getting the values
-# ---------------------------
-products = get_products()
-print(products)
     
 # -----------------------
 # FUNCTION: Inserting sales

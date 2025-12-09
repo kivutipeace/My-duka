@@ -271,3 +271,123 @@ templates
     login.html
     |
     register.html
+
+
+
+
+
+*instead if returning raw data in our routes, we instead return / render full html pages and the subsequently render data in those pages 
+*To render return / html pages in Flask we use a function called render_template which is imported from Flask
+*The render_template() function takes as an argument the name of a html file in string format e.g. render_template("index.html")
+
+
+
+
+TEMPLATE INHERITANCE
+-> A mechanism of reducing redundancy in creating html files by having one base template which contains all common html components e.g navbar, footer -> Uses Jinja syntax -> Create one base template -> base.html, layout.html -> Have the other html files inherit common features from it
+
+
+{% extends 'base.html'%} -->in herits features from base template {% block title %}
+{% endblock %} ---> Where to put my title for child {% block content %}
+{% endblock %} --> block where you place each page's unique content
+
+
+Task 
+-->Apply template inheritance to the remaining html files
+
+
+
+**Displaying Data in the browser / client**
+-> How ? - Table
+---> Database ---> Flask -----> HTML
+
+Jinja
+{% %}
+- asyntax inbuilt with Flask to render Python data
+- A templating engine intergrated with Flask to render dynamic html pages
+
+
+**Key Features of Jinja**
+1. When handling variables use tha handling jinja syntax: {{}}
+2. When handling control structures - {% %}
+*Control structure*
+-Building block that manage the flow of execution in a programs
+a) Sequence
+- Programs execute top to bottom, left to right
+b) Selection
+- Decision making in a program
+- Conditional statements ---> if...else..
+c) Repitition
+- Loop  ----> for, while loops
+
+
+**Jinja control structures syntax**
+
+{% for ..... %} ---initialization
+
+{% endfor %} ---- termination
+
+{% if... %}
+
+{% endif %}
+
+
+cdn ---> content delivery network
+
+
+**POSTING DATA FROM THE CLIENT**
+Posting - sending data to a server
+
+*Steps*
+1. User is provided with a form to fill in some data
+2. User submits the form --- submitted to a Flask route
+3. Flask extracts data from the form and processes it
+      -> Data coming from this form comes in the format of key-value pairs
+      "product_name":"Eggs"
+      "buying_price":"15"
+      "selling_price":"20"
+      data1 = ["Kenyetta avenue",2000,false]
+
+      
+      value -> Whatever the user fills in the form
+      key -> defined by the name attribute in form input
+      -> we extract from data using a request object which has access to the following methods
+      a) request.from - used to access and extract from values using the key
+      b) request.method - method used to determine method defines in the form
+
+      *import request*
+4. Store / insert data using functions
+5. Redirect the user
+ -> we redirect a user using the redirect and url_for methods
+ -> redirect() -> functionality to enable redirection
+ -> url_for() - where exactly do i take a user?
+    - takes the name of the view function as a parameter
+
+
+**Form Checklist**
+a) action attribute
+- An attribute that defines the route where tho form data is to be submitted for processing
+b)method
+- What do you want the server to do with the resource or the data
+c)name attribute
+- A key used to acces and extract values from the form input
+d)input type
+- text, number, email, password
+e)button - type submit
+
+**HTTP Methods**
+GET - getting / fetching data e.g displaying products / sales, seeing ig posts / tweets
+
+POST - sending data to a server e.g adding products, making sales, tweeting
+ 
+PUT - updating and existing resource e.g changing password, changing product name
+
+DELETE - getting rid of a resourcce - deleting a product
+
+*HTTP status code*
+100 - 199 - information responses
+200 - 299 - succesful responses
+300 - 399 - Rediriction response
+400 - 499 - Client error
+500 - 599 - Servor error
+

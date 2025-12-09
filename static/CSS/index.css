@@ -1,0 +1,205 @@
+/* Carousel styling */
+
+/* Make carousel full screen */
+.hero-carousel {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Make the images fill background */
+.hero-carousel .carousel-item img {
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(65%);
+    /* darkens background so text pops */
+}
+
+
+/* Smooth fade */
+.carousel-fade .carousel-item {
+    transition: opacity 1.2 ease-in-out;
+}
+
+
+/* Center text in the middle */
+.carousel-caption {
+    bottom: 40%;
+    transform: translateY(50%);
+}
+
+
+
+/* Caption styling */
+.carousel-caption h5 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    text-shadow: 1 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Make indicators stylish */
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #fff;
+    opacity: 0.6;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+}
+
+
+/* make arrows glow */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.9));
+}
+
+
+/* About us styling */
+/* Parent container */
+.About-us {
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Title styling */
+.About-us h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Flex container for image + text */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    flex-wrap: wrap;
+    /* make it responsive */
+}
+
+/* Image box */
+.about-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Text section */
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+
+/* Card dtyling */
+.products-overview {
+    display: flex;
+    align-items: space-between;
+    gap: 200px;
+    padding-left: 80px;
+}
+
+/*Form styling*/
+.contact {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.contact-us {
+    background: #ffffff;
+    padding: 30px;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    animation: fadeUp 0.6s ease-out;
+}
+
+.contact-us .form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 12px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Input Focus Glow Animation */
+.form-control:focus {
+    border-color: #6a5acd;
+    box-shadow: 0 0 8px rgba(106, 90, 205, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Textarea Special Styling */
+textarea.form-control {
+    resize: none;
+    min-height: 120px;
+    background: linear-gradient(135deg, #fafafa, #ffffff);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Textarea Animated Glow */
+textarea.form-control:focus {
+    background: linear-gradient(135deg, #ffffff, #f6f3ff);
+    box-shadow: 0 0 12px rgba(106, 90, 205, 0.4);
+}
+
+/* Button */
+button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background: #6a5acd;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #5946c8;
+    transform: translateY(-2px);
+}
+
+/* Entrance Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
