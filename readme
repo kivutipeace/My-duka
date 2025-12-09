@@ -391,3 +391,5 @@ DELETE - getting rid of a resourcce - deleting a product
 400 - 499 - Client error
 500 - 599 - Servor error
 
+
+TASK 1.Attempt the following: ---> Insert at least one sale using a form in a modal
