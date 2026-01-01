@@ -366,13 +366,13 @@ Posting - sending data to a server
 
 **Form Checklist**
 a) action attribute
-- An attribute that defines the route where tho form data is to be submitted for processing
+ - An attribute that defines the route where tho form data is to be submitted for processing
 b)method
-- What do you want the server to do with the resource or the data
+ - What do you want the server to do with the resource or the data
 c)name attribute
-- A key used to acces and extract values from the form input
+ - A key used to acces and extract values from the form input
 d)input type
-- text, number, email, password
+ - text, number, email, password
 e)button - type submit
 
 **HTTP Methods**
@@ -389,7 +389,153 @@ DELETE - getting rid of a resourcce - deleting a product
 200 - 299 - succesful responses
 300 - 399 - Rediriction response
 400 - 499 - Client error
-500 - 599 - Servor error
+500 - 599 - Server error
 
 
 TASK 1.Attempt the following: ---> Insert at least one sale using a form in a modal
+
+
+Making Purchases -> Check for available stock before completing a sale -> if enough stock is available, complete sale -> If stock not enough, display insufficient 
+
+1,100
+
+id | name | buying_price | selling_price ----+------------+--------------+--------------- 1 | bread | 50.00 | 60.00 2 | milk | 40.00 | 50.00
+
+#sales# id | pid | quantity | created_at
+----+-----+----------+---------------------------- 5 | 1 | 100 | 2025-12-11 18:47:57.089801 6 | 2 | 200 | 2025-12-11 18:48:06.168792 7 | 1 | 200 | 2025-12-11 18:48:11.932258 8 | 1 | 200 | 2025-12-11 18:48:13.856732 9 | 1 | 20 | 2025-12-11 18:48:19.671831 (5 rows)
+
+product id 1 ---> bread ---> 520
+
+#stock# stk_id| pid | stock_quantity | created_at
+----+-----+----------+---------------------------- 1 | 1 | 1000 | 2025-12-11 18:47:57.089801 2 | 2 | 200 | 2025-12-11 18:48:06.168792 3 | 1 | 2000 | 2025-12-11 18:48:11.932258
+
+
+product id 1 -> add stock ---> 3000 current stock = 2480
+
+1000 -> 8am -> person A 500 -> 9:30am -> person B
+
+current_stock for a product  = total_stock - total sales select sum(stock_quantity) from stock where pid =1; select sum(quantity) from sales where pid = 1;
+
+
+fetchall() -> used for scenerios where more than one value is being fetched -> returns a list of tuple 
+fetchone() -> used for scenarios where a single value is returned -> returns a single tuple
+
+3000 --- total_stock (520) ---> total sales
+
+product id 10 --> add stock 1000 -> 1000-total_stock no sales made on product id 10 none --> None/Null - total_sales Null/None vs Zero -> Null/None - absence/non existence Zero - real values -> 1000 - 1000 = 0
+
+1000 - Null = invalid
+
+Task 1
+1. - Write a function to insert stock, create a stock route and stock page that can post stock from form in a modal and also display stock data in a datatable 
+**HINT** ---> process of posting stock is EXACTLY like posting sales 
+
+2. - Write  a function to insert users into a user table 
+
+3. - Write a function to fetch the following data 
+  -> sales_per_products
+  -> sales_per_day
+  -> profit_per_product
+  -> profit_per_day
+
+N/B - Each of the above is to appear in its own function
+
+4. Continue building and styling your UI
+
+post a product -> 50 -> macbook no stock added on macbook - null no sale made on macbook - null
+
+0 vs null/none
+
+Flashing
+
+-> A feedback mechanism in form of one time notifictaions to the user based on some action
+
+-> flash messages
+
+-> These flash messages are stored in the server in session storage Session -> Any data stored in session storage has to use a secret key to secure it -> The secret key signs the data stored in session securing it
+
+Message Categories 
+1. Sucess - successfull responses e.g. product added successfully - green
+2. Danger / Error - error messages e.g insufficient stock - red
+3. Warning - warning - e.g. stock depleting - yellow
+4. Info - general info e.g offers - blue
+
+
+Flash messages have 2 parts
+a) Message - the actual feedback
+b) Category - broader class of messages grouped by type -> We use flash() imported from flask to display messages from flash messages
+
+
+USER REGISTRATION AND LOGIN
+Get 2 forms form bootstrap:
+1. Registration - full name, email address, phone number, password
+2. Login form - email, password
+
+Form Checklist To Post Data
+1. Action - route where the form is to be submitted
+2. Method - what you want the server to do with the resource
+3. Name - key used by the server to access and extract data from the form
+4. Input type - email, tel, text, number
+5. button - type submit
+
+
+REGISTRATION FLOWCHART
+1. User is provided with a form
+2. User fills the form with their details and submit it to a route
+3. Flask extracts form data using request object
+4. Check that the user who intends to register doesn't exist - hasn't been registered - check using email (unique)
+
+Alice Kamau alice@gmail.com 07123456667 1233
+
+Password Hashing -> The process of converting a password input a fixed length string 
+1234 -> "dsio030okmfdkkdkd"
+
+1234 -> "dsio030okmfdkkdkd" -> salting --> adding random data to a password before hashing it
+
+1234cv = "101---ekj83ud898endnjdiid" 12346g = "909dm90ckkpc-lkxki9cx"
+
+delete from users;
+
+pip install flask-bcrypt
+
+products - id, name, b_prices, s_prices - id, pid, quantity, created_at
+
+sales = selling_price * quantity
+
+sales_per_product - sales, product names profit per product - profit, product names -> sales, profit, product names
+
+Sales per day - sales, date profit per day - profit, date - sales, profit, date
+
+
+**DATA VISUALIZATION WITH CHARTS**
+-> Representation of data using visual aids 
+Goal - present complex info in a simpler manner
+Types:
+-> Bar charts
+-> Pie charts
+-> Doughnut charts
+-> Histograms
+-> Frequency polygon
+-> Bubble charts
+-> Heat maps
+-> Scatter plots
+
+Bar Charts - catergorical data (distinct values)
+    - Sales and profit per product
+    - X axis --> product names
+    - Y axis --> sales and profit
+Line Charts - continuous data
+    - sales and profit per day
+    - X axis --> date
+    - Y axis --> sales & profit
+
+1. User roles
+2. sqlAlchemy
+3. Python virtual enviroment
+4. OOP - extensively
+5. Editing and deleting product
+6. Forgot password
+7. Contact us - with mailing (smtp)
+8. Better authentication with flask login
+9. Authentication using JWT tokens
+10. Deploying my flask project with render

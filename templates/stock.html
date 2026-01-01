@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
-{% block title %} Sales {% endblock %}
+{% block title %} Stocks {% endblock %}
 {% block content %}
 
 
 <div>
     <div>
-        <h1>This is our Sales</h1>
+        <h1>This is our Stocks</h1>
     </div>
 
     <div>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Add Sales
+            Add stocks
         </button>
 
         <!-- Modal -->
@@ -19,28 +19,29 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adding Sales</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add stock</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/add_sales" method="post">
+                        <form action="/add_stock" method="post">
                             <div class="mb-3">
-                                <select class="form-select" name="product_id"   aria-label="Default select example">
+                                <select class="form-select" name="product_id" aria-label="Default select example">
                                     <option selected>Select a product</option>
                                     {% for product in products %}
-                                    <option value="{{product[0]}}">{{product[1]}}</option>
+                                    <option value="{{product[0]}}">
+                                        {{product[1]}}
+                                    </option>
                                     {% endfor %}
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Quantity</label>
-                                <input type="number" name="quantity" class="form-control" id="exampleInputPassword1">
+                                <label for="exampleInputPassword1" class="form-label">Stock Quantity</label>
+                                <input type="number" name="stock_quantity" class="form-control" required>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Add Sales</button>
+                                <button type="submit" class="btn btn-primary">Add Stock</button>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -48,32 +49,31 @@
         </div>
     </div>
     <div>
-
-
-
-        {% for i in x %}
+         {% for i in x %}
 
 
         {% endfor %}
+
     </div>
 
+    <!--Stock Table-->
     <div>
         <table id="example" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Sales ID</th>
-                    <th>Product ID</th>
-                    <th>Quantity</th>
+                    <th>Stock ID</th>
+                    <th>Product</th>
+                    <th>Quantity Added</th>
                     <th>Created At</th>
                 </tr>
             </thead>
             <tbody>
-                {% for sale in sales %}
+                {% for stock in stock %}
                 <tr>
-                    <td>{{sale[0]}}</td>
-                    <td>{{sale[1]}}</td>
-                    <td>{{sale[2]}}</td>
-                    <td>{{sale[3]}}</td>
+                    <td>{{stock[0]}}</td>
+                    <td>{{stock[1]}}</td>
+                    <td>{{stock[2]}}</td>
+                    <td>{{stock[3]}}</td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -48,15 +48,92 @@ def get_sales():
     sales = cur.fetchall()
     return sales
 
-# ------------------------
-# Getting the values
-#--------------------------
 
- 
+# ---------------------
+#FUNCTION: Insert users
+# ----------------------
+def insert_users(values):
+    cur.execute(
+        "INSERT INTO users(full_name, email, phone_number, password) VALUES(%s, %s, %s, %s)",
+        (values)
+        )
+    conn.commit()
+
+#------------------------
+# FUNCTION: Fetch all users
+# --------------------------  
+def get_users():
+    cur.execute("select * from users")
+    users = cur.fetchall()
+    return users
+
+# ------------------
+# FUNCTION: insert stock
+# -----------------
+def insert_stock(values):
+    cur.execute(f"INSERT INTO stock(pid,stock_quantity)values{values}")
+    conn.commit()
+
+# -----------------
+# FUNCTION: fetch all stock
+# --------------
+def get_stock():
+    cur.execute("select * from stock")
+    stock = cur.fetchall()
+    return stock
+
+# Checking and calculating stocks
+def available_stock(product_id):
+    cur.execute(
+        f'select sum(stock_quantity) from stock where pid = {product_id}'
+        )
+    # fetchone() - used for scenarios where a single value is returned -> returns a single tuple
+    total_stock = cur.fetchone ()[0] or 0
+    
+    cur.execute(
+        f'select sum(quantity) from sales where pid = {product_id}'
+        )
+    total_sales = cur.fetchone()[0] or 0
+    
+    return total_stock - total_sales
 
 
 
+def check_user_exists(email):
+    cur.execute("select * from users where email = %s ",(email,))
+    user = cur.fetchone()
+    return user
+    
 
+def sales_per_product():
+    cur.execute("""select products.name as p_name, sum(products.selling_price * sales.quantity)
+             as total_sales from products join sales on products.id = sales.pid group by(p_name)
+                """)
+    product_sales = cur.fetchall()
+    return product_sales
+
+def profit_per_product():
+    cur.execute(""" 
+        select products.name as p_name , sum((products.selling_price - products.buying_price) * sales.quantity)
+            as profit from products join sales on sales.pid = products.id group by(p_name)
+    """)
+    product_profit = cur.fetchall()
+    return product_profit
+
+def sales_per_day():
+    cur.execute("""select sales.created_at as date, sum(products.selling_price * sales.quantity)
+             as total_sales from products join sales on products.id = sales.pid group by(date)
+    """)
+    daily_sales = cur.fetchall()
+    return daily_sales
+
+def profit_per_day():
+    cur.execute(""" 
+    select sales.created_at as date , sum((products.selling_price - products.buying_price) * sales.quantity)
+    as profit from products join sales on sales.pid = products.id group by(date)
+    """)
+    daily_profit = cur.fetchall()
+    return daily_profit
 
     
     
